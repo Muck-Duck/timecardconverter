@@ -3,6 +3,38 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  --bg: #111113;
+  --surface: #1c1c1f;
+  --border: #2e2e33;
+  --border-light: #252529;
+  --text-primary: #e8e6e3;
+  --text-secondary: #a09d97;
+  --text-muted: #6b6860;
+  --accent: #4d8eff;
+  --accent-dim: #1a2a44;
+  --red: #ef5555;
+  --red-dim: #2d1818;
+  --green: #34d37a;
+  --green-dim: #132a1e;
+  --amber: #f59e0b;
+  --amber-dim: #2d2010;
+  --header-bg: #0f1923;
+
+  --c-enroute: #3b82f6;
+  --c-onsite: #22c55e;
+  --c-training: #a78bfa;
+  --c-parts: #fb923c;
+  --c-lunch: #6b7280;
+  --c-home: #94a3b8;
+  --c-unassigned: #4b5563;
+  --c-unpaid: #374151;
+  --c-morning-drive: #22d3ee;
+  --c-evening-drive: #06b6d4;
+  --surface-hover: #222226;
+  --surface-alt: #18181b;
+}
+
+[data-theme="light"] {
   --bg: #f4f3f0;
   --surface: #ffffff;
   --border: #d8d6d1;
@@ -30,6 +62,8 @@
   --c-unpaid: #e5e7eb;
   --c-morning-drive: #0891b2;
   --c-evening-drive: #0e7490;
+  --surface-hover: #fafaf9;
+  --surface-alt: #f3f4f6;
 }
 
 body {

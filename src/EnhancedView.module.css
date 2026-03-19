@@ -143,7 +143,7 @@
   border-radius: 3px;
   font-weight: 500;
 }
-.scFlag.lunch { background: #f3f4f6; color: var(--text-secondary); }
+.scFlag.lunch { background: var(--surface-alt); color: var(--text-secondary); }
 .scFlag.unpaid { background: var(--amber-dim); color: var(--amber); }
 .scFlag.jobs { background: var(--accent-dim); color: var(--accent); }
 .scFlag.upsell { background: var(--green-dim); color: var(--green); }
@@ -167,7 +167,7 @@
   gap: 12px;
   flex-wrap: wrap;
 }
-.tlHeader:hover { background: #fafaf9; }
+.tlHeader:hover { background: var(--surface-hover); }
 .tlHeaderLeft { display: flex; align-items: center; gap: 10px; }
 .tlHeaderRight { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .tlDayName { font-weight: 600; font-size: 14px; }
@@ -225,7 +225,7 @@
   border-radius: 4px;
   font-size: 12px;
 }
-.segRow:hover { background: #fafaf9; }
+.segRow:hover { background: var(--surface-hover); }
 .segDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .segTimes { font-size: 11px; color: var(--text-secondary); width: 155px; flex-shrink: 0; }
 .segLabel { flex: 1; color: var(--text-primary); font-weight: 500; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
@@ -282,11 +282,11 @@
 }
 .rvTable td { padding: 10px 14px; border-bottom: 1px solid var(--border-light); }
 .rvTable tr:last-child td { border-bottom: none; }
-.rvTable tr:hover td { background: #fafaf9; }
+.rvTable tr:hover td { background: var(--surface-hover); }
 .deltaPos { color: var(--green); font-weight: 600; }
 .deltaNeg { color: var(--red); font-weight: 600; }
 .deltaZero { color: var(--text-muted); }
 .noteCell { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; padding-top: 10px; padding-bottom: 10px; }
-.totalRow td { background: #fafaf9; border-top: 2px solid var(--border); }
+.totalRow td { background: var(--surface-hover); border-top: 2px solid var(--border); }
 
 .mono { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }

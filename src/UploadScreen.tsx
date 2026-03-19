@@ -7,6 +7,8 @@ interface Props {
   loading?: boolean;
   driveThreshold: number;
   onThresholdChange: (val: number) => void;
+  theme: 'dark' | 'light';
+  onToggleTheme: () => void;
 }
 
 const PRESETS = [
@@ -29,7 +31,7 @@ const WALKTHROUGH_STEPS = [
   { text: 'Click the download button', image: '/walkthrough/howtodownload.png' },
 ];
 
-export default function UploadScreen({ onFiles, error, loading, driveThreshold, onThresholdChange }: Props) {
+export default function UploadScreen({ onFiles, error, loading, driveThreshold, onThresholdChange, theme, onToggleTheme }: Props) {
   const [dragging1, setDragging1] = useState(false);
   const [dragging2, setDragging2] = useState(false);
   const [file1, setFile1] = useState<File | null>(null);
@@ -67,6 +69,9 @@ export default function UploadScreen({ onFiles, error, loading, driveThreshold, 
 
   return (
     <div className={styles.screen}>
+      <button className={styles.themeToggle} onClick={onToggleTheme} title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+        {theme === 'dark' ? '\u2600' : '\u263D'}
+      </button>
       <div className={styles.inner}>
         <div className={styles.logo}>
           <span className={styles.logoText}>Time Card Converter</span>

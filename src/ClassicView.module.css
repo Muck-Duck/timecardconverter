@@ -37,7 +37,7 @@
 .table thead th:last-child { text-align: right; }
 
 .row { border-bottom: 1px solid var(--border-light); }
-.row:hover { background: #fafaf9; }
+.row:hover { background: var(--surface-hover); }
 
 .tdDate {
   font-family: 'IBM Plex Mono', monospace;
@@ -102,7 +102,7 @@
   border-radius: 3px;
 }
 
-.totalRow td { background: #fafaf9; padding: 5px 14px; }
+.totalRow td { background: var(--surface-hover); padding: 5px 14px; }
 .totalLabel {
   font-size: 11px;
   color: var(--text-muted);

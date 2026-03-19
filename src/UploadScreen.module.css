@@ -5,6 +5,30 @@
   justify-content: center;
   padding: 24px;
   background: var(--bg);
+  position: relative;
+}
+
+.themeToggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+.themeToggle:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--text-primary);
 }
 
 .inner {
@@ -28,8 +52,6 @@
   gap: 8px;
 }
 
-.logoAdt { color: var(--header-bg); }
-.logoDivider { color: var(--accent); }
 .logoText { color: var(--text-primary); }
 
 .tagline {

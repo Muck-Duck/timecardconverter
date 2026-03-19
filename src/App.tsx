@@ -12,13 +12,19 @@ import styles from './App.module.css';
 type View = 'classic' | 'enhanced' | 'insights' | 'check';
 
 const STORAGE_KEY = 'tc-drive-threshold';
+const THEME_KEY = 'tc-theme';
 const DEFAULT_THRESHOLD = 45;
+
+type Theme = 'dark' | 'light';
 
 export default function App() {
   const [data, setData] = useState<TimecardData | null>(null);
   const [view, setView] = useState<View>('classic');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>();
+  const [theme, setTheme] = useState<Theme>(() => {
+    return (localStorage.getItem(THEME_KEY) as Theme) || 'dark';
+  });
   const [driveThreshold, setDriveThreshold] = useState<number>(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     return saved !== null ? parseInt(saved) : DEFAULT_THRESHOLD;
@@ -27,6 +33,13 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, String(driveThreshold));
   }, [driveThreshold]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
 
   async function handleFiles(file1: File, file2?: File) {
     setLoading(true);
@@ -67,6 +80,8 @@ export default function App() {
         loading={loading}
         driveThreshold={driveThreshold}
         onThresholdChange={setDriveThreshold}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
     );
   }
@@ -82,7 +97,10 @@ export default function App() {
           <span className={styles.navThreshold}>
             Drive threshold: <strong>{driveThreshold === 0 ? 'Fully Paid' : `${driveThreshold}m`}</strong>
           </span>
-          <button className={styles.navReset} onClick={() => setData(null)}>
+          <button className={styles.navBtn} onClick={toggleTheme} title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+            {theme === 'dark' ? '\u2600' : '\u263D'}
+          </button>
+          <button className={styles.navBtn} onClick={() => setData(null)}>
             Upload New
           </button>
         </div>
