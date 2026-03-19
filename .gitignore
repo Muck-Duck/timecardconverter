@@ -27,3 +27,6 @@ dist-ssr
 *.xlsx
 *.xls
 *.pdf
+
+# Local walkthrough source (public/walkthrough is committed)
+/walkthrough

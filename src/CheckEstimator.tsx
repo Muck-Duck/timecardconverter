@@ -4,7 +4,7 @@ import styles from './CheckEstimator.module.css';
 
 interface Props { data: TimecardData; driveThreshold: number; }
 
-const RATE_KEY = 'adt-hourly-rate';
+const RATE_KEY = 'tc-hourly-rate';
 const OT_CAP = 40;
 
 interface WeekCalc {
@@ -21,7 +21,7 @@ function calcWeek(days: DayData[], label: string, driveThreshold: number): WeekC
   // - Exclude meal breaks (unpaid)
   // - Exclude gap segments (unaccounted time)
   // - Deduct drive threshold from first enroute (no prior work) and ALL arrive_home
-  //   ADT always deducts arrive_home regardless of whether you commuted from home
+  //   Payroll always deducts arrive_home regardless of whether you commuted from home
   let paidHours = 0;
   let ptoHours = 0;
 
@@ -64,7 +64,7 @@ function calcWeek(days: DayData[], label: string, driveThreshold: number): WeekC
         continue;
       }
 
-      // Last arrive_home → always deduct threshold (ADT always deducts this)
+      // Last arrive_home → always deduct threshold (payroll always deducts this)
       if (i === lastHomeIdx && durMins > 0) {
         const unpaid = Math.min(durMins, driveThreshold);
         paidHours += Math.max(0, durMins - unpaid) / 60;

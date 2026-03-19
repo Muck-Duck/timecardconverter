@@ -21,11 +21,20 @@ function isXlsx(file: File): boolean {
   return name.endsWith('.xlsx') || name.endsWith('.xls');
 }
 
+const WALKTHROUGH_STEPS = [
+  { text: 'Sign into Horizon' },
+  { text: 'Click on "Time and Absences"' },
+  { text: 'Click on "Current Time Card" or "Existing Time Cards"' },
+  { text: 'Select the period start date (it will be underlined)' },
+  { text: 'Click the download button', image: '/walkthrough/howtodownload.png' },
+];
+
 export default function UploadScreen({ onFiles, error, loading, driveThreshold, onThresholdChange }: Props) {
   const [dragging1, setDragging1] = useState(false);
   const [dragging2, setDragging2] = useState(false);
   const [file1, setFile1] = useState<File | null>(null);
   const [file2, setFile2] = useState<File | null>(null);
+  const [showHelp, setShowHelp] = useState(false);
 
   const handleDrop1 = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -60,15 +69,17 @@ export default function UploadScreen({ onFiles, error, loading, driveThreshold, 
     <div className={styles.screen}>
       <div className={styles.inner}>
         <div className={styles.logo}>
-          <span className={styles.logoAdt}>ADT</span>
-          <span className={styles.logoDivider}>//</span>
-          <span className={styles.logoText}>TimeCard Viewer</span>
+          <span className={styles.logoText}>TimeCard Converter</span>
         </div>
 
         <p className={styles.tagline}>
           Upload your exported timecard XLSX for a clear, readable breakdown
           of your hours, pay codes, and drive-time calculations.
         </p>
+
+        <button className={styles.helpLink} onClick={() => setShowHelp(true)}>
+          How do I get my timecard?
+        </button>
 
         {/* Drive threshold setting */}
         <div className={styles.settingsBox}>
@@ -222,6 +233,41 @@ export default function UploadScreen({ onFiles, error, loading, driveThreshold, 
           Your data never leaves your browser. All processing is done locally.
         </div>
       </div>
+
+      {/* Help modal */}
+      {showHelp && (
+        <div className={styles.modalOverlay} onClick={() => setShowHelp(false)}>
+          <div className={styles.modal} onClick={e => e.stopPropagation()}>
+            <div className={styles.modalHeader}>
+              <div className={styles.modalTitle}>How to Download Your Timecard</div>
+              <button className={styles.modalClose} onClick={() => setShowHelp(false)}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+            <div className={styles.modalBody}>
+              <ol className={styles.stepsList}>
+                {WALKTHROUGH_STEPS.map((step, i) => (
+                  <li key={i} className={styles.stepItem}>
+                    <span className={styles.stepNum}>{i + 1}</span>
+                    <div className={styles.stepContent}>
+                      <div className={styles.stepText}>{step.text}</div>
+                      {step.image && (
+                        <img
+                          src={step.image}
+                          alt={step.text}
+                          className={styles.stepImg}
+                        />
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

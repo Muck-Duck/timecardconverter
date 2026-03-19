@@ -11,7 +11,7 @@ import styles from './App.module.css';
 
 type View = 'classic' | 'enhanced' | 'insights' | 'check';
 
-const STORAGE_KEY = 'adt-drive-threshold';
+const STORAGE_KEY = 'tc-drive-threshold';
 const DEFAULT_THRESHOLD = 45;
 
 export default function App() {
@@ -53,7 +53,7 @@ export default function App() {
       setData(merged);
     } catch (e) {
       console.error(e);
-      setError("Could not parse this file. Make sure it's an ADT timecard XLSX export.");
+      setError("Could not parse this file. Make sure it's a timecard XLSX export.");
     } finally {
       setLoading(false);
     }
@@ -76,9 +76,7 @@ export default function App() {
       {/* Top nav */}
       <nav className={styles.topNav}>
         <div className={styles.navLogo}>
-          <span className={styles.navAdt}>ADT</span>
-          <span className={styles.navDivider}>//</span>
-          <span>TimeCard Viewer</span>
+          <span>TimeCard Converter</span>
         </div>
         <div className={styles.navRight}>
           <span className={styles.navThreshold}>

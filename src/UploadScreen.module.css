@@ -269,3 +269,107 @@
   font-size: 12px;
   color: var(--text-muted);
 }
+
+/* Help link */
+.helpLink {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 0;
+}
+.helpLink:hover { opacity: 0.8; }
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+.modal {
+  background: var(--surface);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.modalTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.modalClose {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+}
+.modalClose:hover { background: var(--border-light); color: var(--text-primary); }
+.modalBody {
+  padding: 20px 24px 24px;
+  overflow-y: auto;
+}
+.stepsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stepItem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.stepNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--header-bg);
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.stepContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stepText {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding-top: 3px;
+}
+.stepImg {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
