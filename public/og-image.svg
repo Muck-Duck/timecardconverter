@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#111113"/>
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1c1c1f" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Clock icon -->
+  <circle cx="600" cy="240" r="80" stroke="#4d8eff" stroke-width="5" fill="none"/>
+  <line x1="600" y1="240" x2="600" y2="185" stroke="#4d8eff" stroke-width="5" stroke-linecap="round"/>
+  <line x1="600" y1="240" x2="640" y2="240" stroke="#4d8eff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="600" cy="240" r="5" fill="#4d8eff"/>
+  <!-- Checkmark badge -->
+  <circle cx="660" cy="180" r="28" fill="#34d37a"/>
+  <path d="M647 180L656 189L673 172" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Title -->
+  <text x="600" y="400" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#e8e6e3">Time Card Converter</text>
+  <!-- Subtitle -->
+  <text x="600" y="460" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" fill="#6b6860">Upload your timecard. See your hours. Estimate your check.</text>
+  <!-- URL -->
+  <text x="600" y="560" text-anchor="middle" font-family="monospace" font-size="22" fill="#4d8eff">timecardconverter.com</text>
+</svg>
