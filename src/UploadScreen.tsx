@@ -69,7 +69,7 @@ export default function UploadScreen({ onFiles, error, loading, driveThreshold, 
     <div className={styles.screen}>
       <div className={styles.inner}>
         <div className={styles.logo}>
-          <span className={styles.logoText}>TimeCard Converter</span>
+          <span className={styles.logoText}>Time Card Converter</span>
         </div>
 
         <p className={styles.tagline}>

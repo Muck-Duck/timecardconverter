@@ -76,7 +76,7 @@ export default function App() {
       {/* Top nav */}
       <nav className={styles.topNav}>
         <div className={styles.navLogo}>
-          <span>TimeCard Converter</span>
+          <span>Time Card Converter</span>
         </div>
         <div className={styles.navRight}>
           <span className={styles.navThreshold}>
