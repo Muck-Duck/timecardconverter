@@ -154,3 +154,22 @@
   font-style: italic;
   padding: 6px 14px;
 }
+
+@media (max-width: 600px) {
+  .container { padding: 12px 8px; }
+  .table { font-size: 11px; }
+  .table thead th { font-size: 9px; padding: 7px 6px; }
+  .tdDate { font-size: 10px; padding: 7px 6px; width: auto; }
+  .tdPaycode { padding: 7px 6px; font-size: 10px; min-width: 0; }
+  .tdAmount { padding: 7px 6px; font-size: 10px; width: auto; }
+  .tdTime { padding: 7px 6px; font-size: 10px; width: auto; }
+  .tdHours { padding: 7px 6px; font-size: 10px; width: auto; }
+  .pill { font-size: 9px; padding: 1px 5px; }
+  .unpaidNoteRow td { padding: 2px 6px 4px; }
+  .unpaidNote { font-size: 9px; }
+  .totalRow td { padding: 4px 6px; }
+  .totalLabel { font-size: 9px; }
+  .cumulativeRow td { padding: 8px 6px; font-size: 10px; }
+  .weeklyBonusBlock .table { font-size: 11px; }
+  .tdNote { font-size: 9px; padding: 6px; }
+}
