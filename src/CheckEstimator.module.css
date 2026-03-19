@@ -1,0 +1,182 @@
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Rate input card */
+.rateCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+}
+.rateLabel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.rateInputRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.rateDollar {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.rateInput {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: none;
+  border-bottom: 2px solid var(--border);
+  background: transparent;
+  width: 140px;
+  text-align: center;
+  padding: 4px 0;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.rateInput:focus { border-color: var(--accent); }
+.rateInput::placeholder { color: var(--border); }
+.rateUnit {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.rateSub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* Breakdown card */
+.breakdownCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+.sectionTitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+.breakdownGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.bLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.bHint {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.bVal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.bDivider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 4px 0;
+}
+
+/* Pay card */
+.payCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+.payGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.payRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.payLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.payVal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.payDivider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 4px 0;
+}
+.payTotal .payLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.payTotal .payVal {
+  font-size: 22px;
+  color: var(--green);
+}
+.payDisclaimer {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 16px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.otHighlight {
+  color: var(--amber) !important;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 14px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+
+/* Hide number input spinners */
+.rateInput::-webkit-outer-spin-button,
+.rateInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.rateInput[type=number] { -moz-appearance: textfield; }

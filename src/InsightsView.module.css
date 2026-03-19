@@ -1,0 +1,222 @@
+.container { max-width: 960px; margin: 0 auto; padding: 24px; }
+
+/* Hero row */
+.heroRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.heroCard {
+  flex: 1;
+  min-width: 120px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  text-align: center;
+}
+.heroVal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.heroLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.cardWide {
+  grid-column: 1 / -1;
+}
+.cardTitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Time breakdown */
+.breakdownBar {
+  display: flex;
+  height: 24px;
+  border-radius: 6px;
+  overflow: hidden;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+.breakdownSeg {
+  min-width: 3px;
+  border-radius: 3px;
+  transition: opacity 0.15s;
+  cursor: default;
+}
+.breakdownSeg:hover { opacity: 0.8; }
+.breakdownLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.breakdownItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+.breakdownDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.breakdownName {
+  flex: 1;
+  color: var(--text-secondary);
+}
+.breakdownTime {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.breakdownPct {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 42px;
+  text-align: right;
+}
+
+/* Daily hours bars */
+.dailyBars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dayBarRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dayBarLabel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  width: 32px;
+  flex-shrink: 0;
+}
+.dayBarTrack {
+  flex: 1;
+  height: 22px;
+  background: var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.dayBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-enroute) 0%, var(--c-onsite) 100%);
+  border-radius: 4px;
+  min-width: 4px;
+  transition: width 0.3s ease;
+}
+.dayBarVal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  width: 40px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Stat list */
+.statList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+.statItem:last-child { border-bottom: none; padding-bottom: 0; }
+.statItemLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.statItemVal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.statItemSub {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Fun facts */
+.factGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.factItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px;
+  background: #fafaf9;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+.factIcon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.factTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.factVal {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+  .factGrid { grid-template-columns: 1fr 1fr; }
+  .heroRow { flex-direction: column; }
+}
