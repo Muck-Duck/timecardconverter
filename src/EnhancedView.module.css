@@ -219,16 +219,17 @@
 .segList { display: flex; flex-direction: column; gap: 1px; }
 .segRow {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: baseline;
+  gap: 8px;
   padding: 5px 6px;
   border-radius: 4px;
   font-size: 12px;
+  flex-wrap: wrap;
 }
 .segRow:hover { background: var(--surface-hover); }
-.segDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.segTimes { font-size: 11px; color: var(--text-secondary); width: 155px; flex-shrink: 0; }
-.segLabel { flex: 1; color: var(--text-primary); font-weight: 500; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.segDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; align-self: center; }
+.segTimes { font-size: 11px; color: var(--text-secondary); white-space: nowrap; }
+.segLabel { color: var(--text-primary); font-weight: 500; white-space: nowrap; }
 .segNote {
   font-size: 10px;
   background: var(--green-dim);
@@ -237,6 +238,7 @@
   border-radius: 3px;
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 500;
+  white-space: nowrap;
 }
 .segUnpaid {
   font-size: 10px;
@@ -246,9 +248,10 @@
   border-radius: 3px;
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 500;
+  white-space: nowrap;
 }
-.segJob { font-size: 10px; color: var(--text-muted); }
-.segDur { font-size: 11px; color: var(--text-secondary); text-align: right; min-width: 40px; }
+.segJob { font-size: 10px; color: var(--text-muted); white-space: nowrap; }
+.segDur { font-size: 11px; color: var(--text-secondary); text-align: right; margin-left: auto; white-space: nowrap; }
 
 /* Legend */
 .legend {

@@ -344,17 +344,15 @@ function TimelineDay({ day }: { day: DayData }) {
                     <div className={`${styles.segTimes} ${styles.mono}`}>
                       {seg.startTime} – {seg.endTime}
                     </div>
-                    <div className={styles.segLabel}>
-                      {label}
-                      {seg.isFirstDrive && !isUnpaidDrive && (
-                        <span className={styles.segNote}>fully paid (prior activity)</span>
-                      )}
-                      {isUnpaidDrive && (
-                        <span className={styles.segUnpaid}>
-                          {seg.unpaidMinutes}m unpaid · {seg.paidMinutes}m paid
-                        </span>
-                      )}
-                    </div>
+                    <div className={styles.segLabel}>{label}</div>
+                    {seg.isFirstDrive && !isUnpaidDrive && (
+                      <span className={styles.segNote}>fully paid</span>
+                    )}
+                    {isUnpaidDrive && (
+                      <span className={styles.segUnpaid}>
+                        {seg.unpaidMinutes}m unpaid · {seg.paidMinutes}m paid
+                      </span>
+                    )}
                     {seg.jobNumber && (
                       <div className={`${styles.segJob} ${styles.mono}`}>#{seg.jobNumber}</div>
                     )}

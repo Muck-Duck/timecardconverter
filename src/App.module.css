@@ -89,3 +89,12 @@
 .viewTab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
 .mono { font-family: 'IBM Plex Mono', monospace; }
+
+@media (max-width: 600px) {
+  .topNav { padding: 0 12px; height: 48px; }
+  .navLogo { font-size: 13px; }
+  .navThreshold { display: none; }
+  .headerBar { padding: 10px 12px; }
+  .viewSwitcher { padding: 0 8px; overflow-x: auto; }
+  .viewTab { padding: 10px 12px; font-size: 12px; white-space: nowrap; }
+}
